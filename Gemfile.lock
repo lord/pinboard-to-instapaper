@@ -1,0 +1,20 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.8.8)
+      faraday (>= 0.7.4, < 0.9)
+    multi_xml (0.5.5)
+    multipart-post (1.2.0)
+    pinboard_api (1.0.0)
+      faraday (~> 0.8.0)
+      faraday_middleware (~> 0.8.7)
+      multi_xml (~> 0.5.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  faraday
+  pinboard_api
