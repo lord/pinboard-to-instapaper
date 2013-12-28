@@ -19,18 +19,18 @@ def post_to_instapaper(conn, url, username, password)
 end
 
 puts "Enter your Pinboard API token:"
-PinboardApi.auth_token = gets.strip
+PinboardApi.auth_token = gets.chomp
 
 puts "Enter the Pinboard tag to import:"
-tag_to_import = gets.strip
+tag_to_import = gets.chomp
 
 puts "Enter your Instapaper username:"
-ip_username = gets.strip
+ip_username = gets.chomp
 
 puts "Enter your Instapaper password:"
-ip_password = STDIN.noecho(&:gets)
+ip_password = STDIN.noecho(&:gets).chomp
 
-PinboardApi::Post.all(tag: tag_to_import).each do |post|
+PinboardApi::Post.all(:tag => tag_to_import).each do |post|
   post_to_instapaper(conn, post.url, ip_username, ip_password)
   puts "Importing #{post.url} to Instapaper"
 end
